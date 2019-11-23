@@ -9,22 +9,21 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 const chunk = (array, size) => {
-    let finalArray = []
-    let innerArray = []
-    for(let i = 0; i < array.length; i++) {
-        let currentNum = array[i]
-        if (innerArray.length === size) {
-            innerArray.push(currentNum) 
-            finalArray.push(innerArray)
-            innerArray = []    
-        } else if (innerArray.length < size) {
-            innerArray.push(currentNum)
-        }
+  let chunked = [] 
+  let innerArray = []
+
+  array.forEach(element => {
+    if(!chunked.length-1 || innerArray.length !== size) {
+      innerArray.push(element)
+    } else {
+      chunked.push(innerArray)
+      innerArray = []
     }
-    console.log("Final Array: ", finalArray)
-    return finalArray
+    
+  })
+  return chunked
 }
 
-chunk([1, 2, 3, 4, 5], 3)
+console.log(chunk([1, 2, 3, 4, 5], 3))
 
 module.exports = chunk;
