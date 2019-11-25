@@ -9,9 +9,6 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 
-
-
-
 /*
 1. Create an empty array called chunked that will hold the arrays being split up
 2. For each element in the unchunked array:
@@ -19,7 +16,7 @@
   B. If the last element does not exist, or if the last element in the chunked array === chunk size
     a. Push a new chunk into the chunked array with the current element. 
   C. Else add the current element into the chunk
-*/
+
 const chunk = (array, size) => {
   let chunked = [];
   
@@ -36,6 +33,22 @@ const chunk = (array, size) => {
       last.push(element)
     }
   }
+  return chunked
+}
+
+*/
+
+const chunk = (array, size) => {
+  let chunked = []
+  let index = 0
+
+  while(index < array.length) {
+    console.log("index before push: ", index)
+    chunked.push(array.slice(index, index + size))
+    index += size
+    console.log("index: ", index)
+  }
+  
   return chunked
 }
 
