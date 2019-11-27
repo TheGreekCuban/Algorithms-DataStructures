@@ -9,13 +9,29 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 const anagrams = (stringA, stringB) => {
-    let strA = stringA.replace(/[^\w]/g, "").toLowerCase()
-    let strB = stringB.replace(/[^\w]/g, "").toLowerCase()
+    //WE ARE USING A REGEX EXPRESSION TO STRIP THE WORDS OF ALL SPACES AND CHARACTERS OTHER THAN LETTERS, THEN PUT THEM AS A LOWER CASE WORD IN A VARIABLE.
+    let strA = stringA.replace(/[^\w]/g, "").toLowerCase().split("")
+    let strB = stringB.replace(/[^\w]/g, "").toLowerCase().split("")
+    console.log("A: ", strA, "B: ", strB)
 
-    console.log("A: ", strA , "B: ", strB)
+    //WE SHOULD CHECK IF THE ARRAYS LENGHTS ARE EQUAL. IF NOT, NO NEED TO RUN REDUCE BECAUSE WE KNOW THEY CANNOT BE ANAGRAMS. USING TERNARY
+
+    if(strA.length >= strB.length) {
+    //WE NEED TO CREATE AN CHARACTER MAP FOR EACH STRING. WE DO SO BY USING SPLIT AND THEN RUNNING REDUCE.
+        // let strObjA = strA.reduce((object, letter) => {
+        //     if(letter in object) {
+        //         object[letter]++
+        //     } else {
+        //         object[letter] = 1
+        //     }
+        // },{})
+        return true
+    } else {
+        return false 
+    }
 }
 
-anagrams('RAIL! SAFETY!', 'fairy tales')
+console.log("return: ", anagrams('RAIL! SAFETY!', 'fairy tales'))
 
 
 

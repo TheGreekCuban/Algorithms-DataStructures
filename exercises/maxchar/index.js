@@ -27,8 +27,12 @@ const maxChar = str => {
     /*
     Then we want to return the key of the highest valye in that newly created object. We do this using Object.keys on the strObj. Then we run reduce on that value. Simply put, this function in reduce does not have an initial value so the accumulator is set to the first element in the object. In the reduce we are comparing the values of each key in the object. If the accumulator val is > than the next element, we return the accumulator. This happens until every key is iterated over. We are left returning the largest valued object key.
     */
+    console.log("Obj.keys(strObj): ", Object.keys(strObj))
 
     return Object.keys(strObj).reduce((a, b) => strObj[a] > strObj[b] ? a : b);
+    //1. strObj[a] > strObj[b] => strObj["a"] > strObj["b"] => returns b or because they're both 1.
+    //2. strObj[a] > strObj[b] => strObj["b"] > strObj["c"] => returns c because 7 > 1
+    //3. strObj[a] > strObj[b] => strObj["c"] > strObj["d"] => returns c because 7 > 3 
 }
 
 console.log("Answer: ", maxChar("abcccccccddd"))
