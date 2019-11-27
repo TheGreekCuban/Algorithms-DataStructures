@@ -8,9 +8,17 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
+//SOLUTION 1: SIMPLEST TRICK SOLUTION USING SORT
+const anagrams = (stringA, stringB) => cleanString(stringA) === cleanString(stringB) ? true : false
 
-//SOLUTION 1: MY SOLUTION
+const cleanString = str => {
+    let cleanedString = str.replace(/[^\w]/g, "").split("").sort().join("")
+    return cleanedString
+}
+
 /*
+//SOLUTION 2: MY SOLUTION
+
 const anagrams = (stringA, stringB) => {
     //WE ARE USING A REGEX EXPRESSION TO STRIP THE WORDS OF ALL SPACES AND CHARACTERS OTHER THAN LETTERS, THEN PUT THEM AS A LOWER CASE WORD IN A VARIABLE.
     let strA = stringA.replace(/[^\w]/g, "").toLowerCase().split("")
@@ -44,11 +52,8 @@ const anagrams = (stringA, stringB) => {
         return false 
     }    
 }
-*/
 
-//=============================================//
-
-//SOLUTION 2: SIMILAR SOLUTION
+//SOLUTION 3: SIMILAR SOLUTION
 const anagrams = (stringA, stringB) => {
     let aCharMap = buildCharMap(stringA)
     let bCharMap = buildCharMap(stringB)
@@ -81,10 +86,8 @@ const buildCharMap = (str) => {
 
     return charMap
 }
-
+*/
 
 console.log("return: ", anagrams('A tree, a life, a bench', 'A tree, a fence, a yard'))
-
-
 
 module.exports = anagrams;
