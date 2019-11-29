@@ -11,6 +11,7 @@
 //SOLUTION 1: SIMPLEST TRICK SOLUTION USING SORT
 const anagrams = (stringA, stringB) => cleanString(stringA) === cleanString(stringB) ? true : false
 
+//HELPER FUNCTION
 const cleanString = str => {
     let cleanedString = str.replace(/[^\w]/g, "").split("").sort().join("")
     return cleanedString
