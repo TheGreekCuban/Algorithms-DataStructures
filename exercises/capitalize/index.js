@@ -27,7 +27,7 @@ const capitalize = str => {
     //After pushing each new word into the finall array we return a joined finalArray creating a string again.
     return finalArray.join(" ")
 }
-*/
+
 
 //COURSE SOLUTION 1 - SAME AS MINE BUT FAR CLEANER
 const capitalize = str => {
@@ -41,7 +41,26 @@ const capitalize = str => {
     }
     return words.join(" ")
 }
+*/
 
+//SOLUTION 2 - NOT AS CLEAN BUT MAY BE EASIER TO UNDERSTAND
+const capitalize = str => {
+    //Create an empty string called result
+    let result = ""
+
+    //Iterate through each character in the string
+    for(let i = 0; i < str.length; i++) {
+        //If the character to the left of the one being iterated over is a space, add capitalize it then add it to result, if not just add it to result.
+        if (i === 0) {
+            result += str[i].toUpperCase()
+        } else if (str[i - 1] === " ") {
+            result += str[i].toUpperCase()
+        } else {
+            result += str[i]
+        }
+    }
+    return result
+}
 
 capitalize('look, it is working!')
 
