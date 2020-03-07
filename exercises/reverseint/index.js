@@ -15,7 +15,6 @@
 
 function reverseInt(num) {
     let reverse = num.toString().split('').reverse().join('')
-      
     return parseFloat(reverse) * Math.sign(num)                
   }
 

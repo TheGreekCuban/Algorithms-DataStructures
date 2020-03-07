@@ -17,9 +17,12 @@ const reverse = str => {
     for(let i = 0; i < str.length; i++) {
         let currentChar = str[i]
         newString = currentChar + newString
+        debugger;
     }
     return newString
 }
+
+reverse("Hello")
 
 //SOLUTION 3: USING SPLIT AND REDUCE    
 //const reverse = str => str.split("").reduce((rev, char) => char + rev, "")
