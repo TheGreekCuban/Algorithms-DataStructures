@@ -14,6 +14,7 @@
 //       ' ### '
 //       '#####'
 
+/*
 const pyramid = n => {
     //We save the midpoint vairable at the top of the function as it is something we can use throughtout the function.
     const midpoint = Math.floor((2 * n - 1) / 2)
@@ -33,7 +34,12 @@ const pyramid = n => {
         console.log(level)
     }
 }
+*/
 
+//RECURSIVE SOLUTION!
+const pyramid = n => {
+
+}
 
 
 pyramid(15)
